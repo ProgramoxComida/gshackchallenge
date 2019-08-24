@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <!--<item android:title="Departamentos">
+        <menu>
+            <item
+                    android:id="@+id/nav_linea_blanca"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/linea_blanca"/>
+            <item
+                    android:id="@+id/nav_electronica"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/electronica"/>
+            <item
+                    android:id="@+id/nav_telefonia"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/telefonia"/>
+            <item
+                    android:id="@+id/nav_motos"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/motos"/>
+        </menu>
+    </item>-->
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_departamentos"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/departamentos"/>
+        <!--<item
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/menu_gallery"/>
+        <item
+                android:id="@+id/nav_slideshow"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="@string/menu_slideshow"/>
+        <item
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/menu_tools"/>-->
+    </group>
+
+</menu>
