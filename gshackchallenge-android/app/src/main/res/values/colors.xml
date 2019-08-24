@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="elektraYellowDark">#e9c81f</color>
+    <color name="elektraYellow">#ffdb20</color>
+    <color name="elektraRed">#e0251b</color>
 </resources>
