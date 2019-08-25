@@ -8,6 +8,9 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface DummyService {
+    companion object{
+        val BASE_URL = "http://13.84.224.147/"
+    }
 
     @GET("/api/v1/pedidos")
     fun getPedidos(): Call<ResDummy<ArrayList<Pedido>>>
@@ -23,7 +26,7 @@ interface DummyService {
                                     @Path("product_id") product_id:Int):Call<ResDummy<Review>>
 
     @GET("/api/v1/products")
-    fun getProductsCat():Call<ResDummy<Producto>>
+    fun getProductsCat():Call<ResDummy<List<Producto>>>
 
     @GET("/api/v1/products")
     fun getProductsCatCategoryID(@Query("categoryId") categoryId:Int):Call<ResDummy<Producto>>

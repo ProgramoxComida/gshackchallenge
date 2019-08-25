@@ -14,7 +14,7 @@ import retrofit2.http.Query;
 public interface CatalogSystemAPI {
 
 
-
+    String BASE_URL = "https://challenge.ektdevelopers.com/api/catalog_system/";
 
     @GET("/api/catalog_system/pvt/category/{categoryId}")
     public Call<Categoria> getCategory(@Path("categoryId") Integer categoryId);

@@ -12,14 +12,24 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.widget.Toast
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
+import io.programming4food.poh.models.Producto
+import io.programming4food.poh.models.ProductoDetalle
+import io.programming4food.poh.models.ProductoElektraCluster
+import io.programming4food.poh.models.ResDummy
 import kotlinx.android.synthetic.main.content_dashboard.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.ArrayList
 
 class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
     val sampleImg = listOf(R.drawable.img1,R.drawable.img2,R.drawable.img3)
+    //val prodDemo:MutableList<ProductoDetalle> = listOf<ProductoDetalle>()
     //lateinit val carouselView: CarouselView
     //val imageListener = ImageListener { position, imageView -> imageView.setImageResource(sampleImg[position])  }
 
@@ -41,6 +51,52 @@ class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         carouselView.pageCount = sampleImg.size
         carouselView.setImageListener { position, imageView -> imageView.setImageResource(sampleImg[position]) }
+
+        GSHackChallenge.ClientElektra
+            .searchCatalog(1,10, "OrderByTopSaleDESC", "productClusterIds:1157")
+            .enqueue(object:Callback<List<ProductoElektraCluster>>{
+                override fun onFailure(call: Call<List<ProductoElektraCluster>>, t: Throwable) {
+                    Toast.makeText(this@DashboardActivity,"Verifica tu conexion a Internet",Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onResponse(
+                    call: Call<List<ProductoElektraCluster>>,
+                    response: Response<List<ProductoElektraCluster>>
+                ) {
+                    if ( response.isSuccessful ){
+                        prodDemo.clear()
+
+                        response.body()?.forEach {
+                            GSHackChallenge.ClientElektra.getProductoBySku(it.productId)
+                                .enqueue(object:Callback<ProductoDetalle>{
+                                    override fun onFailure(
+                                        call: Call<ProductoDetalle>,
+                                        t: Throwable
+                                    ) {
+                                        Toast.makeText(this@DashboardActivity,"Verifica tu conexion a Internet",Toast.LENGTH_SHORT).show()
+                                    }
+
+                                    override fun onResponse(
+                                        call: Call<ProductoDetalle>,
+                                        response: Response<ProductoDetalle>
+                                    ) {
+                                        if(response.isSuccessful){
+                                            response.body()?.apply {
+                                                prodDemo.add(this)
+                                            }
+                                        }
+
+                                    }
+
+                                })
+                        }
+
+                    }
+                }
+
+            })
+
+
 
     }
 
