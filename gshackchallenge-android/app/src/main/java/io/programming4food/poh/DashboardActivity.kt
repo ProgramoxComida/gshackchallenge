@@ -65,6 +65,10 @@ class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
                 val i: Intent = Intent(this@DashboardActivity, DepartmentsActivity::class.java)
                 startActivity(i)
             }
+            R.id.nav_pedidos -> {
+                val i: Intent = Intent(this@DashboardActivity, LoginActivity::class.java)
+                startActivity(i)
+            }
         }
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)

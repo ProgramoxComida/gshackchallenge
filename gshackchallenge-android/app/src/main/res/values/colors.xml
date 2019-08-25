@@ -6,4 +6,7 @@
     <color name="elektraYellowDark">#e9c81f</color>
     <color name="elektraYellow">#ffdb20</color>
     <color name="elektraRed">#e0251b</color>
+    <color name="facebookBlue">#3b5998</color>
+    <color name="googleRed">#DB4437</color>
+    <color name="googleGreen">#0F9D58</color>
 </resources>
