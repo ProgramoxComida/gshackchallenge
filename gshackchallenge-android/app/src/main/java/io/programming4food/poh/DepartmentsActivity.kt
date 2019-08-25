@@ -51,6 +51,7 @@ class DepartmentsActivity : AppCompatActivity() {
                     var departmentsAdapter = DepartmentsAdapter(list!!)
 
                     recyclerView.adapter = departmentsAdapter
+
                 } else {
 
                 }

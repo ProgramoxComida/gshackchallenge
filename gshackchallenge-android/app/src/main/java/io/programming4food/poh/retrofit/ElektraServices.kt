@@ -28,5 +28,5 @@ interface ElektraServices {
                       @Query("fq") productCluster:String?): Call<List<ProductoElektraCluster>>
 
     @GET("/produto/sku/{sku}")
-    fun getProductoBySku(@Path("sku") sku:String):Call<ProductoDetalle>
+    fun getProductoBySku(@Path("sku") sku:String):Call<List<ProductoDetalle>>
 }

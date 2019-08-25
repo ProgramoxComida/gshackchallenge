@@ -13,8 +13,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageListener
+import io.programming4food.poh.adapters.DashboardProductAdapter
 import io.programming4food.poh.models.Producto
 import io.programming4food.poh.models.ProductoDetalle
 import io.programming4food.poh.models.ProductoElektraCluster
@@ -28,8 +30,10 @@ import java.util.ArrayList
 class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
+
     val sampleImg = listOf(R.drawable.img1,R.drawable.img2,R.drawable.img3)
-    //val prodDemo:MutableList<ProductoDetalle> = listOf<ProductoDetalle>()
+    val prodDemo:MutableList<ProductoDetalle> = mutableListOf<ProductoDetalle>()
+    val adapter: DashboardProductAdapter = DashboardProductAdapter(prodDemo)
     //lateinit val carouselView: CarouselView
     //val imageListener = ImageListener { position, imageView -> imageView.setImageResource(sampleImg[position])  }
 
@@ -68,21 +72,25 @@ class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
                         response.body()?.forEach {
                             GSHackChallenge.ClientElektra.getProductoBySku(it.productId)
-                                .enqueue(object:Callback<ProductoDetalle>{
+                                .enqueue(object:Callback<List<ProductoDetalle>>{
                                     override fun onFailure(
-                                        call: Call<ProductoDetalle>,
+                                        call: Call<List<ProductoDetalle>>,
                                         t: Throwable
                                     ) {
                                         Toast.makeText(this@DashboardActivity,"Verifica tu conexion a Internet",Toast.LENGTH_SHORT).show()
                                     }
 
                                     override fun onResponse(
-                                        call: Call<ProductoDetalle>,
-                                        response: Response<ProductoDetalle>
+                                        call: Call<List<ProductoDetalle>>,
+                                        response: Response<List<ProductoDetalle>>
                                     ) {
                                         if(response.isSuccessful){
                                             response.body()?.apply {
-                                                prodDemo.add(this)
+                                                //prodDemo.add(this)
+                                                this.forEach {
+                                                    prodDemo.add(it)
+                                                }
+                                                adapter.notifyDataSetChanged()
                                             }
                                         }
 
@@ -96,7 +104,12 @@ class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
             })
 
+        var layoutManager = GridLayoutManager(this@DashboardActivity, 2)
+        productosD.setHasFixedSize(true)
 
+        //var departmentsAdapter = DepartmentsAdapter(list!!)
+        productosD.layoutManager = layoutManager
+        productosD.adapter = adapter
 
     }
 
