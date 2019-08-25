@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
 
         var toolbar: Toolbar = findViewById(R.id.toolbar_main_login)
         toolbar.title = "Iniciar sesión en Elektra"
-        toolbar.setTitleTextColor(getColor(R.color.elektraRed))
+        //toolbar.setTitleTextColor(getColor(R.color.elektraRed))
 
         setSupportActionBar(toolbar)
 

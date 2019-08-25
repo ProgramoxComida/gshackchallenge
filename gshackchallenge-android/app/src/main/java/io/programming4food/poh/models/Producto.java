@@ -50,6 +50,34 @@ public class Producto {
     Object AdWordsRemarketingCode;
     @SerializedName("LomadeeCampaignCode") @Attribute(name ="LomadeeCampaignCode" , required = false)
     Object LomadeeCampaignCode;
+
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "ID=" + ID +
+                ", Name='" + Name + '\'' +
+                ", DepartamentId=" + DepartamentId +
+                ", CategoryId=" + CategoryId +
+                ", BrandId=" + BrandId +
+                ", LinkId='" + LinkId + '\'' +
+                ", RefId='" + RefId + '\'' +
+                ", IsVisible=" + IsVisible +
+                ", Description='" + Description + '\'' +
+                ", DescriptionShort='" + DescriptionShort + '\'' +
+                ", RelaseNote=" + RelaseNote +
+                ", Keywords='" + Keywords + '\'' +
+                ", Title='" + Title + '\'' +
+                ", IsActive=" + IsActive +
+                ", TaxCode='" + TaxCode + '\'' +
+                ", MetaDescription='" + MetaDescription + '\'' +
+                ", SupplierId=" + SupplierId +
+                ", ShowWithoutStock=" + ShowWithoutStock +
+                ", ListStoreId=" + ListStoreId +
+                ", AdWordsRemarketingCode=" + AdWordsRemarketingCode +
+                ", LomadeeCampaignCode=" + LomadeeCampaignCode +
+                '}';
+    }
 }
 
 
