@@ -3,7 +3,7 @@ package io.programming4food.poh.models;
 
 import java.io.Serializable;
 
-class Imagenes implements Serializable {
+public class Imagenes implements Serializable {
     String IdArchive;
     String Path;
     Boolean IsMain;

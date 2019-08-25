@@ -15,6 +15,8 @@ import androidx.core.content.ContextCompat.startActivity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
+import io.programming4food.meanmachine.QRActivity
+import kotlinx.android.synthetic.main.payment_main_layout.*
 
 
 class PaymentActivity : AppCompatActivity() {
@@ -88,6 +90,13 @@ class PaymentActivity : AppCompatActivity() {
                 Log.i("BottomSheets", "Nuevo estado: $nuevoEstado")
             }
         })
+
+        qr_pay.setOnClickListener {
+            Intent( this@PaymentActivity , QRActivity::class.java).apply{
+                //Segmento de envio de informacion de pago
+                startActivity(this)
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

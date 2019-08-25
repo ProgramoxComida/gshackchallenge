@@ -18,6 +18,7 @@ import io.programming4food.poh.models.Categoria
 import io.programming4food.poh.models.Producto
 import io.programming4food.poh.models.ProductoDetalle
 import java.io.Serializable
+import java.util.*
 
 class DashboardProductAdapter(val productos: List<ProductoDetalle>): RecyclerView.Adapter<DashboardProductAdapter.ViewHolder>() {
     lateinit var _context: Context
@@ -39,17 +40,21 @@ class DashboardProductAdapter(val productos: List<ProductoDetalle>): RecyclerVie
 
         var a = item.images.flatten()
 
-        Glide.with(_context).load(a[0]).into(holder.imagen)
+        Glide.with(_context).load(a[0].path ).into(holder.imagen)
+        holder.nombre.text = item.name;
+        holder.precio.text = "A $%.2f".format(item.price)
 
 
         holder.cardView.setOnClickListener {
-
+            //Inten
         }
     }
 
     inner class ViewHolder(@NonNull itemView: View): RecyclerView.ViewHolder(itemView) {
         val cardView: CardView = itemView.findViewById(R.id.cv_department)
         val imagen:ImageView = itemView.findViewById(R.id.imagen)
+        val nombre:TextView = itemView.findViewById(R.id.nombre)
+        val precio:TextView = itemView.findViewById(R.id.precio)
 
 
 

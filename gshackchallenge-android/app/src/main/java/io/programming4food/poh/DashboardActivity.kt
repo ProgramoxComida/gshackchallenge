@@ -56,8 +56,9 @@ class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         carouselView.pageCount = sampleImg.size
         carouselView.setImageListener { position, imageView -> imageView.setImageResource(sampleImg[position]) }
 
+        //"productClusterIds:1157"
         GSHackChallenge.ClientElektra
-            .searchCatalog(1,10, "OrderByTopSaleDESC", "productClusterIds:1157")
+            .searchCatalog(1,10, "OrderByTopSaleDESC", null)
             .enqueue(object:Callback<List<ProductoElektraCluster>>{
                 override fun onFailure(call: Call<List<ProductoElektraCluster>>, t: Throwable) {
                     Toast.makeText(this@DashboardActivity,"Verifica tu conexion a Internet",Toast.LENGTH_SHORT).show()
