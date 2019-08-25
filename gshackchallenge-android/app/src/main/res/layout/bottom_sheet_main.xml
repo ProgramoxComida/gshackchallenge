@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/googleGreen"
+            android:id="@+id/btn_accesscode_login_post"
             android:text="Enviar código de acceso rápido"
             android:textColor="#fff" />
 

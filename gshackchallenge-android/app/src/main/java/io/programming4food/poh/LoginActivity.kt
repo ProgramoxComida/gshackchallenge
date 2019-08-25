@@ -1,5 +1,6 @@
 package io.programming4food.poh
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -31,11 +32,19 @@ class  LoginActivity : AppCompatActivity() {
 
         var bottomSheet = findViewById<LinearLayout>(R.id.bottom_sheet)
         var accessCode = findViewById<Button>(R.id.btn_accesscode_login)
+        var emailBtn = findViewById<Button>(R.id.btn_accesscode_login_post)
         var bsb = BottomSheetBehavior.from(bottomSheet)
 
         accessCode.setOnClickListener(object: View.OnClickListener {
             override fun onClick(p0: View?) {
                 bsb.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        })
+
+        emailBtn.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(p0: View?) {
+                var i = Intent(this@LoginActivity, OrdersActivity::class.java)
+                startActivity(i)
             }
         })
 

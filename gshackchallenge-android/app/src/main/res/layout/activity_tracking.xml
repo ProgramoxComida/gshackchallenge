@@ -7,4 +7,54 @@
         android:layout_height="match_parent"
         tools:context=".TrackingActivity">
 
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/toolbar_main_tracking"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.transferwise.sequencelayout.SequenceLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_main_tracking">
+
+        <com.transferwise.sequencelayout.SequenceStep
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:anchor="25 Ago"
+                app:subtitle="Tu compra fue realizada y liquidada."
+                app:title="Compra Realizada" />
+
+        <com.transferwise.sequencelayout.SequenceStep
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:anchor="26 Ago"
+                app:title="Mercancía Asignada" />
+
+        <com.transferwise.sequencelayout.SequenceStep
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:active="true"
+                app:anchor="Hoy"
+                app:subtitle="Tu pedido se encuentra en ruta y ya se dirige a tu domicilio."
+                app:title="En Ruta"
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <com.transferwise.sequencelayout.SequenceStep
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:subtitle="Tu pedido ha sido recibido en el domicilio indicado. "
+                app:title="Pedido Entregado" />
+
+    </com.transferwise.sequencelayout.SequenceLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
