@@ -2,7 +2,6 @@ package io.programming4food.poh
 
 import android.app.Application
 import android.util.Log
-import io.programming4food.poh.models.Categoria
 import io.programming4food.poh.models.Pedido
 import io.programming4food.poh.models.ResDummy
 import io.programming4food.poh.retrofit.CatalogSystemAPI
@@ -29,7 +28,7 @@ class GSHackChallenge : Application() {
     companion object {
 
         var BASE_URL = "https://challenge.ektdevelopers.com/api/catalog_system/"
-        var BASE_URL_DUMMY = "http://9b1cf693.ngrok.io/docs"
+        var BASE_URL_DUMMY = "http://9b1cf693.ngrok.io/docs/"
 
         private var retrofit = Retrofit.Builder().baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -50,7 +49,7 @@ class GSHackChallenge : Application() {
             .build()
 
         var Client = retrofit.create(CatalogSystemAPI::class.java )
-        var ClientDummy = retrofit.create(DummyService::class.java )
+        var ClientDummy = retrofitDummy.create(DummyService::class.java )
     }
 }
 
