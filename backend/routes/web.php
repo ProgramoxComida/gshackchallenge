@@ -14,3 +14,5 @@
 $router->get('/api/v1/pedidos', 'PedidosController@getPedidos');
 $router->get('/api/v1/pedidos/{pedidos_id}', 'PedidosController@getPedido');
 $router->get('/api/v1/pedidos/{pedidos_id}/tracking', 'PedidosController@getPedidoTracking');
+$router->get('/api/v1/pedidos/{pedidos_id}/items/{product_id}/review', 'PedidosController@getPedidoItemReview');
+$router->get('/api/v1/products', 'ProductsController@get_products');
