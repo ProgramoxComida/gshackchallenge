@@ -4,11 +4,14 @@ import com.google.gson.annotations.SerializedName;
 
 import org.simpleframework.xml.Attribute;
 
+import java.sql.Date;
+import java.util.List;
+
 public class Pedido {
-    @SerializedName("sku") @Attribute(name ="sku" , required = false)
-    Integer sku;
-    @SerializedName("brand") @Attribute(name ="brand" , required = false)
-    String brand;
-    @SerializedName("sku_name") @Attribute(name ="sku_name" , required = false)
-    String sku_name;
+    @SerializedName("id") @Attribute(name ="id" , required = false)
+    String id;
+    @SerializedName("created_at") @Attribute(name ="created_at" , required = false)
+    Date created_at;
+    @SerializedName("items") @Attribute(name ="items" , required = false)
+    List<ItemsPedido> items;
 }

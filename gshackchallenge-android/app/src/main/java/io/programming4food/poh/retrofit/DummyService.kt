@@ -3,13 +3,14 @@ package io.programming4food.poh.retrofit
 import io.programming4food.poh.models.Pedido
 import io.programming4food.poh.models.ResDummy
 import retrofit2.Call
+import java.util.ArrayList
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface DummyService {
 
     @GET("/api/v1/pedidos")
-    fun getPedidos(): Call<ResDummy<List<Pedido>>>
+    fun getPedidos(): Call<ResDummy<ArrayList<Pedido>>>
 
     @GET("/api/v1/pedidos/{pedidos_id}")
     fun getPedido(@Path("pedidos_id") pedidos_id:Int)
