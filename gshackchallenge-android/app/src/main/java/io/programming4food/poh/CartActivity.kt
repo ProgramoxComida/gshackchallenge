@@ -9,6 +9,11 @@ import android.view.View
 import android.widget.Button
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import io.programming4food.poh.adapters.CartAdapter
+import io.programming4food.poh.models.Producto
+import kotlinx.android.synthetic.main.activity_cart.*
 
 class CartActivity : AppCompatActivity() {
 
@@ -28,9 +33,14 @@ class CartActivity : AppCompatActivity() {
 
         var payButton: Button = findViewById(R.id.btn_pay_credit_card)
 
+        var layoutManager = LinearLayoutManager(this@CartActivity)
+        recyclerView.layoutManager = layoutManager
+        var cartAdapter = CartAdapter( listOf( Producto(),Producto(), Producto(),Producto(),Producto(),Producto()) ) // Cambiar por servicio
+        recyclerView.adapter = cartAdapter
+
         payButton.setOnClickListener(object: View.OnClickListener {
             override fun onClick(p0: View?) {
-                var i: Intent = Intent(this@CartActivity, PaymentActivity::class.java)
+                var i = Intent(this@CartActivity, PaymentActivity::class.java)
                 startActivity(i)
             }
         })

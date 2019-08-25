@@ -30,4 +30,7 @@ interface DummyService {
 
     @GET("/api/v1/products")
     fun getProductsCatBrandId(@Query("brandId") brandId:Int):Call<ResDummy<Producto>>
+
+    @GET("/api/v1/user_profile")
+    fun getUserProfile():Call<ResDummy<Profile>>
 }

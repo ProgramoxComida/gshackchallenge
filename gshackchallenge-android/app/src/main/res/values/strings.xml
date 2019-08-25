@@ -16,4 +16,13 @@
     <string name="electronica">Electrónica</string>
     <string name="telefonia">Telefonía</string>
     <string name="motos">Motos</string>
+
+    <string-array name="spinner_cart_items">
+        <item>1 Pieza</item>
+        <item>2 Piezas</item>
+        <item>3 Piezas</item>
+        <item>4 Piezas</item>
+        <item>5 Piezas</item>
+        <item>6 Piezas</item>
+    </string-array>
 </resources>
