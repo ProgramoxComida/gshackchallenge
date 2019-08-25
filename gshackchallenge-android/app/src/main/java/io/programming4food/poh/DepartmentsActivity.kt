@@ -3,9 +3,17 @@ package io.programming4food.poh
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import io.programming4food.poh.adapters.DepartmentsAdapter
+import io.programming4food.poh.models.Categoria
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DepartmentsActivity : AppCompatActivity() {
 
@@ -22,6 +30,30 @@ class DepartmentsActivity : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+
+        var layoutManager = GridLayoutManager(this@DepartmentsActivity, 2)
+        var recyclerView = findViewById<RecyclerView>(R.id.rv_departments)
+        recyclerView.setHasFixedSize(true)
+
+        recyclerView.layoutManager = layoutManager
+
+        var categoria = GSHackChallenge.Client.categoryTree
+
+        categoria.enqueue(object: Callback<List<Categoria>> {
+            override fun onFailure(call: Call<List<Categoria>>, t: Throwable) {
+                Log.e("ERR", t.message)
+            }
+
+            override fun onResponse(call: Call<List<Categoria>>, response: Response<List<Categoria>>) {
+                // Log.d("STAT", call.request().url().toString())
+                if(response.code() == 200) {
+                    
+                } else {
+
+                }
+            }
+
+        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
