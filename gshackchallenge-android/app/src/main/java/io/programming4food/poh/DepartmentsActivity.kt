@@ -45,9 +45,12 @@ class DepartmentsActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<List<Categoria>>, response: Response<List<Categoria>>) {
-                // Log.d("STAT", call.request().url().toString())
+                Log.d("STAT", call.request().url().toString())
                 if(response.code() == 200) {
-                    
+                    var list = response.body()
+                    var departmentsAdapter = DepartmentsAdapter(list!!)
+
+                    recyclerView.adapter = departmentsAdapter
                 } else {
 
                 }

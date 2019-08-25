@@ -26,24 +26,16 @@
     <group android:checkableBehavior="single">
         <item
                 android:id="@+id/nav_departamentos"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/shopping_search"
+                android:iconTint="@color/elektraRed"
+                android:iconTintMode="screen"
                 android:title="@string/departamentos"/>
         <item
                 android:id="@+id/nav_pedidos"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/wallet"
+                android:iconTint="@color/elektraRed"
+                android:iconTintMode="screen"
                 android:title="@string/pedidos"/>
-        <!--<item
-                android:id="@+id/nav_gallery"
-                android:icon="@drawable/ic_menu_gallery"
-                android:title="@string/menu_gallery"/>
-        <item
-                android:id="@+id/nav_slideshow"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="@string/menu_slideshow"/>
-        <item
-                android:id="@+id/nav_tools"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="@string/menu_tools"/>-->
     </group>
 
 </menu>

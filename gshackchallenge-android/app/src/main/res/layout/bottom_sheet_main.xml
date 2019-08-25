@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:drawablePadding="16dp"
-            android:text="Por favor, ingrese su correo electrónicoo"/>
+            android:text="Por favor, ingrese su correo electrónico"/>
 
     <EditText
             android:id="@+id/editText"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">POH</string>
+    <string name="app_name">Elektra</string>
     <string name="title_activity_dashboard">Bienvenido a Elektra</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -10,6 +10,7 @@
 
     <string name="departamentos">Departamentos</string>
     <string name="pedidos">Mis Pedidos</string>
+    <string name="carrito">Mi Carrito de Compras</string>
 
     <string name="linea_blanca">Línea Blanca</string>
     <string name="electronica">Electrónica</string>
