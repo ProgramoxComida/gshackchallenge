@@ -4,10 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 import org.simpleframework.xml.Attribute;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Producto {
+public class Producto implements Serializable {
     @SerializedName("ID") @Attribute(name ="ID" , required = false)
     Integer ID;
     @SerializedName("Name") @Attribute(name ="Name" , required = false)

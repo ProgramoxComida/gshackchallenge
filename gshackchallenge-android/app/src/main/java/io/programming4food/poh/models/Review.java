@@ -1,6 +1,8 @@
 package io.programming4food.poh.models;
 
-public class Review {
+import java.io.Serializable;
+
+public class Review implements Serializable {
     String id;
     Integer produc_id;
     String comment;

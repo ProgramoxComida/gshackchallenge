@@ -1,14 +1,15 @@
 package io.programming4food.poh.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class StatusPedido {
+public class StatusPedido implements Serializable {
     String id;
     String pedido_id;
     List<Eventos> events;
 }
 
-class Eventos{
+class Eventos implements Serializable{
     String message;
     String receive;
 }

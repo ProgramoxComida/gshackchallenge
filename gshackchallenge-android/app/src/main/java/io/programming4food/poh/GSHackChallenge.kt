@@ -31,7 +31,7 @@ class GSHackChallenge : Application() {
     companion object {
 
         var BASE_URL = "https://challenge.ektdevelopers.com/api/catalog_system/"
-        var BASE_URL_DUMMY = "http://edc1d5e0.ngrok.io/"
+        var BASE_URL_DUMMY = "http://13.84.224.147/"
 
         private var retrofit = Retrofit.Builder().baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

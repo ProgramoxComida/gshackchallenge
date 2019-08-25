@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Root(strict = false)
-public class Categoria {
+public class Categoria implements Serializable {
 
     @SerializedName("parentId") @Attribute(name ="parentId" , required = false)
     Integer parentId;

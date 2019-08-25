@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import org.simpleframework.xml.Attribute;
 
-public class ResDummy<T> {
+import java.io.Serializable;
+
+public class ResDummy<T> implements Serializable {
 
     @SerializedName("status") @Attribute(name ="status" , required = false)
     Boolean status;

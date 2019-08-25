@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import org.simpleframework.xml.Attribute;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     @SerializedName("Nombre") @Attribute(name ="Nombre" , required = false)
     String nombre;

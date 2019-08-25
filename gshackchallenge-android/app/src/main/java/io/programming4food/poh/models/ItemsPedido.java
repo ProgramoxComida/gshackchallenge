@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import org.simpleframework.xml.Attribute;
 
-class ItemsPedido {
+import java.io.Serializable;
+
+class ItemsPedido implements Serializable {
 
     @SerializedName("sku") @Attribute(name ="sku" , required = false)
     Integer sku;

@@ -12,9 +12,16 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import com.synnapps.carouselview.CarouselView
+import com.synnapps.carouselview.ImageListener
+import kotlinx.android.synthetic.main.content_dashboard.*
 
 class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+
+    val sampleImg = listOf(R.drawable.img1,R.drawable.img2,R.drawable.img3)
+    //lateinit val carouselView: CarouselView
+    //val imageListener = ImageListener { position, imageView -> imageView.setImageResource(sampleImg[position])  }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +38,10 @@ class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
+
+        carouselView.pageCount = sampleImg.size
+        carouselView.setImageListener { position, imageView -> imageView.setImageResource(sampleImg[position]) }
+
     }
 
     override fun onBackPressed() {

@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import org.simpleframework.xml.Attribute;
 
-public class Marca {
+import java.io.Serializable;
+
+public class Marca implements Serializable {
     @SerializedName("id") @Attribute(name ="id" , required = false)
     Integer id;
     @SerializedName("name") @Attribute(name ="name" , required = false)
