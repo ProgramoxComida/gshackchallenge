@@ -15,7 +15,7 @@ import androidx.core.content.ContextCompat.startActivity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
-import io.programming4food.meanmachine.QRActivity
+
 import kotlinx.android.synthetic.main.payment_main_layout.*
 
 

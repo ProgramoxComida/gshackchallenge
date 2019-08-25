@@ -43,6 +43,9 @@
                 android:label="@string/title_activity_dashboard"
                 android:theme="@style/AppTheme.NoActionBar" />
         <activity
+                android:name=".QRActivity"
+                android:theme="@style/AppThemeNoBar"></activity>
+        <activity
                 android:name=".SplashActivity"
                 android:theme="@style/AppThemeNoBar">
             <intent-filter>
