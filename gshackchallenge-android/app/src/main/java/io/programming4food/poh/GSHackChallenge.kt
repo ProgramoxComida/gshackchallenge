@@ -24,7 +24,7 @@ class GSHackChallenge : Application() {
 
         //retrofit.create(CatalogSystemAPI::class.java).getCategory(77).enqueue(ListenerTest())
         //retrofit.create(CatalogSystemAPI.class).getCategoryTree().enqueue(new ListenerTest2());
-        //GSHackChallenge.ClientDummy.getPedidos().enqueue(ListenerTest())
+        GSHackChallenge.ClientDummy.getPedidos().enqueue(ListenerTest())
         //GSHackChallenge.Client.categoryTree.enqueue(CategoryTree())
     }
 
@@ -56,7 +56,7 @@ class GSHackChallenge : Application() {
     }
 }
 
-/*
+
 internal class ListenerTest : Callback<ResDummy<ArrayList<Pedido>>> {
     /**
      * Invoked when a network exception occurred talking to the server or when an unexpected
@@ -81,7 +81,7 @@ internal class ListenerTest : Callback<ResDummy<ArrayList<Pedido>>> {
     }
 
 }
-
+/*
 
 class CategoryTree : Callback<MutableList<Categoria>> {
     /**

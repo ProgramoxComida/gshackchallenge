@@ -4,7 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 import org.simpleframework.xml.Attribute;
 
-import java.sql.Date;
+
+import java.util.Date;
 import java.util.List;
 
 public class Pedido {
