@@ -10,7 +10,7 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
+$router->get('/api/v1/user_profile', 'UserController@getProfile');
 $router->get('/api/v1/pedidos', 'PedidosController@getPedidos');
 $router->get('/api/v1/pedidos/{pedidos_id}', 'PedidosController@getPedido');
 $router->get('/api/v1/pedidos/{pedidos_id}/tracking', 'PedidosController@getPedidoTracking');
