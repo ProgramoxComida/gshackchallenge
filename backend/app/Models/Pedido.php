@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @OA\Schema(
  *     schema="Pedido",
- *      @OA\Property(
+ *     @OA\Property(
  *          property="id",
  *          type="integer",
  *          description="Id de Pedido"

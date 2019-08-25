@@ -15,6 +15,24 @@ class ProductsController extends Controller
      *     tags={"Products"},
      *     summary="Listado de Productos",
      *     description="Este endpoint retorna los productos del catalogo de Elektra que vienen del Dataset",
+     *     @OA\Parameter(
+     *          name="categoryId",
+     *          in="query",
+     *          required=false,
+     *          @OA\Schema(
+     *              type="string"
+     *          ),
+     *          description="ID de Categoria",
+     * 		),
+     *     @OA\Parameter(
+     *          name="brandId",
+     *          in="query",
+     *          required=false,
+     *          @OA\Schema(
+     *              type="string"
+     *          ),
+     *          description="ID de Brand",
+     * 		),
      *     @OA\Response(
      *         response=200,
      *         description="successful operation",

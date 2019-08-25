@@ -86,6 +86,15 @@ class PedidosController extends Controller
      *     tags={"Pedidos"},
      *     summary="Detalle del pedido",
      *     description="Este endpoint retorna los pedidos",
+     *     @OA\Parameter(
+     *          name="pedidos_id",
+     *          in="path",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          ),
+     *          description="ID de Pedido",
+     * 		),
      *     @OA\Response(
      *         response=200,
      *         description="successful operation",
@@ -129,6 +138,15 @@ class PedidosController extends Controller
      *     tags={"Pedidos"},
      *     summary="Detalle de envio del pedido",
      *     description="Este endpoint retorna el estado de envio de un pedido",
+     *     @OA\Parameter(
+     *          name="pedidos_id",
+     *          in="path",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          ),
+     *          description="ID de Pedido",
+     * 		),
      *     @OA\Response(
      *         response=200,
      *         description="successful operation",
@@ -173,6 +191,24 @@ class PedidosController extends Controller
      *     tags={"Pedidos"},
      *     summary="Detalle de envio del pedido",
      *     description="Este endpoint retorna el estado de envio de un pedido",
+     *     @OA\Parameter(
+     *          name="pedidos_id",
+     *          in="path",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          ),
+     *          description="ID de Pedido",
+     * 		),
+     *     @OA\Parameter(
+     *          name="product_id",
+     *          in="path",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          ),
+     *          description="ID de Producto",
+     * 		),
      *     @OA\Response(
      *         response=200,
      *         description="successful operation",
