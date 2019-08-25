@@ -26,7 +26,7 @@
             app:srcCompat="@drawable/baseline_check_circle_outline_black_48"/>
     <TextView
             android:id="@+id/textView4"
-            android:layout_width="match_constraint"
+            android:layout_width="0dp"
             android:layout_height="wrap_content" android:layout_marginStart="16dp"
             android:layout_marginTop="16dp" android:layout_marginEnd="16dp"
             android:text="Muchas gracias por comprar en Elektra. Ahora puedes dar seguimiento a tu pedido desde la app."

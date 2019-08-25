@@ -39,6 +39,7 @@ class DepartmentsAdapter(departments: List<Categoria>): RecyclerView.Adapter<Dep
         holder.cardView.setOnClickListener(object: View.OnClickListener {
             override fun onClick(p0: View?) {
                 var i: Intent = Intent(_context, SubcategoryActivity::class.java)
+                i.putExtra("ITEM", departments[position] as Serializable)
                 _context.startActivity(i)
             }
         })

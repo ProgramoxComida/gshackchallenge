@@ -26,7 +26,7 @@ class CartActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
-        var payButton: Button = findViewById(R.id.btn_pay)
+        var payButton: Button = findViewById(R.id.btn_pay_credit_card)
 
         payButton.setOnClickListener(object: View.OnClickListener {
             override fun onClick(p0: View?) {

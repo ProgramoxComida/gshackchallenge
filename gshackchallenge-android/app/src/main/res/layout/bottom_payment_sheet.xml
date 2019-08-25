@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools" android:id="@+id/bottom_sheet_payment"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#ffffff"
+              android:orientation="vertical"
+              app:behavior_hideable="false"
+              app:behavior_peekHeight="0dp"
+              app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_marginStart="16dp" android:layout_marginTop="16dp"
+                android:drawablePadding="16dp" android:text="Ingrese los datos de su tarjeta"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+        <EditText
+                android:id="@+id/et_card_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp" android:layout_marginEnd="16dp"
+                android:ems="10" android:hint="Número de tarjeta"
+                android:inputType="textEmailAddress" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView6"/>
+        <EditText
+                android:id="@+id/txt_cvv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginStart="16dp" android:layout_marginTop="8dp" android:layout_marginEnd="16dp"
+                android:ems="10" android:gravity="right"
+                android:inputType="number" android:password="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_date_void"
+                app:layout_constraintTop_toBottomOf="@+id/et_card_number"/>
+        <Button
+                android:id="@+id/btn_pay_credit_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp" android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp" android:background="@color/googleGreen"
+                android:text="Pagar" android:textColor="#fff"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/txt_cvv"/>
+        <EditText
+                android:id="@+id/txt_date_void"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp" android:layout_marginEnd="8dp"
+                android:ems="10" android:gravity="left"
+                android:hint="MM/YY" android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_card_number"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

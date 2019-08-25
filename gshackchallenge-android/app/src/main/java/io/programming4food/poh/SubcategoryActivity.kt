@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import io.programming4food.poh.adapters.CategoriesAdapter
+import io.programming4food.poh.models.Categoria
 
 class SubcategoryActivity : AppCompatActivity() {
 
@@ -22,6 +26,16 @@ class SubcategoryActivity : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+
+        var extras = intent.extras
+        var itemCategoria = extras.getSerializable("ITEM") as Categoria
+
+        var layoutManager = LinearLayoutManager(this@SubcategoryActivity)
+        var recyclerView = findViewById<RecyclerView>(R.id.rv_subcategories)
+        recyclerView.layoutManager = layoutManager
+
+        var departmentsAdapter = CategoriesAdapter(itemCategoria.children)
+        recyclerView.adapter = departmentsAdapter
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

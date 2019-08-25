@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingTop="54dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.538"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+        <Button
+                android:id="@+id/btn_credito_azteca"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp" android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/elektraRed" android:text="Crédito Elektra"
+                android:textColor="@android:color/white" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView5"/>
+        <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp" android:text="Por favor, indica tu forma de pago"
+                android:textStyle="bold" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        <Button
+                android:id="@+id/btn_credit_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp" android:layout_marginEnd="16dp"
+                android:background="@color/facebookBlue"
+                android:text="Tarjeta de Crédito"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_credito_azteca"/>
+        <Button
+                android:id="@+id/button6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp" android:background="@color/googleGreen"
+                android:text="Tiendas de Conveniencia" android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_credit_card"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
